@@ -603,7 +603,7 @@ main_menu() {
 	cat <<- EOF
 		${RED}[${WHITE}::${RED}]${ORANGE} Select An Choice To Play ${RED}[${WHITE}::${RED}]${ORANGE}
    
-   ${RED}[${WHITE}::${RED}]${ORANGE}RXCE.in        ${RED}[${WHITE}::${RED}]${ORANGE}Mantrimalls   ${RED}[${WHITE}Server${RED}]${ORANGE}Meok.in
+                ${RED}[${WHITE}::${RED}]${ORANGE}RXCE.in        ${RED}[${WHITE}::${RED}]${ORANGE}Mantrimalls   ${RED}[${WHITE}::${RED}]${ORANGE}Meok.in
 		${RED}[${WHITE}01${RED}]${ORANGE} Parity        ${RED}[${WHITE}11${RED}]${ORANGE} Parity       ${RED}[${WHITE}21${RED}]${ORANGE} Parity
 		${RED}[${WHITE}02${RED}]${ORANGE} Bcone         ${RED}[${WHITE}12${RED}]${ORANGE} Bcone        ${RED}[${WHITE}22${RED}]${ORANGE} Bcone
 		${RED}[${WHITE}03${RED}]${ORANGE} Emerd         ${RED}[${WHITE}13${RED}]${ORANGE} Emerd        ${RED}[${WHITE}23${RED}]${ORANGE} Emerd
